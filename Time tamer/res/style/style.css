@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background-color: black;
+    overscroll-behavior: none;
+}
+:root{
+    --secontant : '0';
+}
+
+.timer_values {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+span {
+    font-size: 2rem;
+}
+
+.measurments_div {
+    font-size: 4.5rem;
+    padding: 2px;
+    width: 100px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.808);
+    outline: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.158);
+    mix-blend-mode: screen;
+    border-radius: 10px;
+}
+
+header>h1 {
+
+    text-align: center;
+    padding: 30px 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+footer {
+    position: absolute;
+    bottom: 10svh;
+    width: 100svw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+footer>button {
+    padding: 15px 40px;
+    border: none;
+    background-color: rgb(7, 146, 7);
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.733);
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+footer > button:hover{
+    background-color: rgb(56, 172, 56);
+}
+#stop
+{
+    background-color: rgb(177, 3, 3);
+    display: none;
+}
+main{
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+.circle{
+    /* background: conic-gradient(rgba(220, 20, 60, 0.877) 75%,rgba(255, 255, 255, 0) 0%); */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 1s;
+}
+.circle::before{
+    content: attr(title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.808);
+    
+    width: 257px;
+    height: 257px;
+    border-radius: 50%;
+    background: rgba(27, 27, 27, 0.973);
+    backdrop-filter: blur(30px);
+    position: absolute;
+    margin: auto;
+}

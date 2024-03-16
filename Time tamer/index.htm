@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="/res/style/style.css">
+    <link rel="stylesheet" href="/res/style/fonts.css">
+</head>
+<body>
+    <header>
+        <h1>Time Tamer</h1>
+    </header>
+    
+    <div class="timer_values">
+        <input type="number" class="hours_value measurments_div" value="00" id="hours" max="24">
+        <span> : </span>
+        <input type="number" class="min_valuen measurments_div" value="00" id="min" max="60">
+        <span> : </span>
+        <input type="number" class="sec_value measurments_div" value="00" id="sec" max="60" maxlength="60" required>
+    </div>
+    <main>
+        <div class="circle" id="circle"></div>
+    </main>
+    <footer>
+        <button type="button" id="start">
+            Start
+        </button>
+        <button type="button" id="stop">
+            Stop
+        </button>
+    </footer>
+    <script src="/res/js/script.js"></script>
+</body>
+</html>
