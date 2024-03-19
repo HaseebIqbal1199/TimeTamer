@@ -7,6 +7,7 @@
 body {
     background-color: black;
     overscroll-behavior: none;
+    overflow: hidden;
 }
 :root{
     --secontant : '0';
@@ -20,6 +21,7 @@ body {
 
 span {
     font-size: 2rem;
+    user-select: none;
 }
 
 .measurments_div {
@@ -41,6 +43,7 @@ header>h1 {
     padding: 30px 0;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
+    user-select: none;
     font-style: normal;
 }
 
@@ -88,7 +91,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: background 1s;
+    transition: ease background ease;
 }
 .circle::before{
     content: attr(title);
@@ -107,3 +110,91 @@ main{
     position: absolute;
     margin: auto;
 }
+.menu{
+    background-color: rgb(212, 209, 209);
+    width: 100vw;
+    height: 40vh;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    bottom: -60svh;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+.menu-slide-up{
+    animation: slide-up .5s ease-in alternate forwards;
+}
+.menu-slide-down{
+    animation: slide-down .5s ease-out alternate forwards;
+}
+@keyframes slide-up{
+    from{
+        bottom: -60svh;
+    }
+    to{
+        bottom: 0%;
+    }
+} 
+@keyframes slide-down{
+    from{
+        bottom: 0svh;
+    }
+    to{
+        bottom: -60%;
+    }
+} 
+.menu span{
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 500;
+    font-family: system-ui;
+    margin: 15px 23px;
+}
+.menu > ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    
+}
+.menu > #c-div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    margin: 0 21px;
+    
+}
+.menu > ul > li,
+.menu > #c-div > li{
+    list-style: none;
+    width: 50px;
+    height: 50px;
+    gap: 50px;
+    border-radius: 5px;
+    border: 2px solid black;
+}
+#s-div{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 19px;
+    margin: 0 21px;
+}
+#s-div li{
+    list-style: none;
+}
+.circle-shape{
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.square-shape{
+    background-color: white;
+    border: 3px solid #333;
+    border-radius: 3px;
+    width: 40px;
+    height: 40px;
+}
+
