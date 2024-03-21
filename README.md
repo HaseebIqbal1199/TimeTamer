@@ -28,4 +28,4 @@ Welcome to the Timer App! This simple yet powerful tool helps you manage your ti
 To get started with the Timer App, simply clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/HaseebIqbal1199/timer-app.git 
+git clone https://github.com/HaseebIqbal1199/TimeTamer.git 
