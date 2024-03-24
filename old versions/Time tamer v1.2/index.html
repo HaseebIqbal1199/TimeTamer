@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>Time Tamer</title>
+    <link rel="stylesheet" href="res/style/style.css">
+    <link rel="stylesheet" href="res/style/fonts.css">
+    <link rel="shortcut icon" href="res/logo.jpeg" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <h1 id="name-header">Time Tamer</h1>
+    </header>
+    
+    <div class="timer_values">
+        <input type="number" class="hours_value measurments_div" value="00" id="hours" max="24">
+        <span> : </span>
+        <input type="number" class="min_valuen measurments_div" value="00" id="min" max="60" required>
+        <span> : </span>
+        <input type="number" class="sec_value measurments_div" value="00" id="sec" max="60" maxlength="60" required>
+    </div>
+    <main>
+        <div class="circle" id="circle"></div>
+    </main>
+    <footer>
+        <button type="button" id="start">
+            Start
+        </button>
+        <button type="button" id="stop">
+            Stop
+        </button>
+    </footer>
+    <div class="menu" id="menu">
+        <span>Colors</span>
+        <ul>
+            <li class="teal" style="background-color: teal" onclick="teal()"></li>
+            <li class="yellow" style="background-color: yellow" onclick="yellow()"></li>
+            <li class="green" style="background-color: rgb(2, 165, 2)" onclick="green()"></li>
+            <li class="red" style="background-color: red;" onclick="red()"></li>
+            <li class="orange" style="background-color: orange" onclick="orange()"></li>
+        </ul>
+        <div id="c-div">
+            <li class="blue" style="background-color: blue;" onclick="blue()"></li>
+            <li class="purple" style="background-color: purple;" onclick="purple()"></li>
+        </div>
+        <span>Shapes</span>
+        <div id="s-div">
+            <li class="circle-shape" onclick="shape_circle()"></li>
+            <li class="square-shape" onclick="shape_square()"></li>
+        </div>
+    </div>
+    <script src="res/js/script.js"></script>
+</body>
+</html>

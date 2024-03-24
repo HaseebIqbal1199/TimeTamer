@@ -127,15 +127,14 @@ main {
 }
 
 .menu {
-    background-color: rgba(212, 209, 209, 0.87);
-    backdrop-filter: blur(5px);
+    background-color: rgb(212, 209, 209);
     width: 100vw;
-    height: 57vh;
+    height: 50vh;
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    bottom: -65svh;
+    bottom: -60svh;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 
@@ -165,7 +164,7 @@ main {
     }
 
     to {
-        bottom: -65%;
+        bottom: -60%;
     }
 }
 

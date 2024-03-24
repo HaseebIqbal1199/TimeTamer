@@ -5,29 +5,12 @@
 }
 
 body {
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 58px, rgba(14, 158, 171, 0.13) 58px, rgba(14, 158, 171, 0.13) 156px);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    background-color: #303030;
+    background-color: black;
     overscroll-behavior: none;
     overflow: hidden;
 }
-
-@media (min-width:800px) {
-    body {
-        background: #000;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: bottom;
-        background-image: repeating-linear-gradient(45deg, transparent, transparent 58px, rgba(14, 158, 171, 0.13) 58px, rgba(14, 158, 171, 0.13) 156px);
-        overscroll-behavior: none;
-        overflow: hidden;
-    }
-}
-
-:root {
-    --secontant: '0';
+:root{
+    --secontant : '0';
 }
 
 .timer_values {
@@ -49,16 +32,9 @@ span {
     color: rgba(255, 255, 255, 0.808);
     outline: none;
     border: none;
-    background: rgba(255, 255, 255, 0.157);
+    background: rgba(255, 255, 255, 0.158);
     mix-blend-mode: screen;
     border-radius: 10px;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
 }
 
 header>h1 {
@@ -73,8 +49,7 @@ header>h1 {
 
 footer {
     position: absolute;
-    /* background-color: red; */
-    bottom: 7svh;
+    bottom: 10svh;
     width: 100svw;
     display: flex;
     justify-content: center;
@@ -93,107 +68,105 @@ footer>button {
     font-weight: 400;
     font-style: normal;
 }
-
-footer>button:hover {
+footer > button:hover{
     background-color: rgb(56, 172, 56);
 }
-
-#stop {
+#stop
+{
     background-color: rgb(177, 3, 3);
     display: none;
 }
-
-main {
+main{
     /* background-color: red; */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 0;
 }
-
-#svg::before {
-    content: attr(title);
-    /* background-color: red; */
+.circle{
+    /* background: conic-gradient(rgba(220, 20, 60, 0.877) 75%,rgba(255, 255, 255, 0) 0%); */
     width: 300px;
     height: 300px;
-    position: absolute;
-    text-align: center;
+    border-radius: 50%;
     display: flex;
-    align-items: center;
     justify-content: center;
-    font-family: 'Roboto';
-    font-size: 2.2rem;
-    font-weight: 700;
+    align-items: center;
+    transition: ease background ease;
 }
-
-.menu {
-    background-color: rgba(212, 209, 209, 0.87);
-    backdrop-filter: blur(5px);
+.circle::before{
+    content: attr(title);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-family: sans-serif;
+    color: rgba(255, 255, 255, 0.808);
+    
+    width: 257px;
+    height: 257px;
+    border-radius: 50%;
+    background: rgba(27, 27, 27, 0.973);
+    backdrop-filter: blur(30px);
+    position: absolute;
+    margin: auto;
+}
+.menu{
+    background-color: rgb(212, 209, 209);
     width: 100vw;
-    height: 57vh;
+    height: 40vh;
     position: absolute;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    bottom: -65svh;
+    bottom: -60svh;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 
 }
-
-.menu-slide-up {
+.menu-slide-up{
     animation: slide-up .5s ease-in alternate forwards;
 }
-
-.menu-slide-down {
+.menu-slide-down{
     animation: slide-down .5s ease-out alternate forwards;
 }
-
-@keyframes slide-up {
-    from {
+@keyframes slide-up{
+    from{
         bottom: -60svh;
     }
-
-    to {
+    to{
         bottom: 0%;
     }
-}
-
-@keyframes slide-down {
-    from {
+} 
+@keyframes slide-down{
+    from{
         bottom: 0svh;
     }
-
-    to {
-        bottom: -65%;
+    to{
+        bottom: -60%;
     }
-}
-
-.menu span {
+} 
+.menu span{
     color: black;
     font-size: 1.2rem;
     font-weight: 500;
     font-family: system-ui;
     margin: 15px 23px;
 }
-
-.menu>ul {
+.menu > ul{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
+    
 }
-
-.menu>#c-div {
+.menu > #c-div{
     display: flex;
     flex-wrap: wrap;
     gap: 19px;
     margin: 0 21px;
-
+    
 }
-
-.menu>ul>li,
-.menu>#c-div>li {
+.menu > ul > li,
+.menu > #c-div > li{
     list-style: none;
     width: 50px;
     height: 50px;
@@ -201,27 +174,23 @@ main {
     border-radius: 5px;
     border: 2px solid black;
 }
-
-#s-div {
+#s-div{
     display: flex;
     flex-wrap: wrap;
     gap: 19px;
     margin: 0 21px;
 }
-
-#s-div li {
+#s-div li{
     list-style: none;
 }
-
-.circle-shape {
+.circle-shape{
     background-color: white;
     border: 3px solid #333;
     border-radius: 50%;
     width: 40px;
     height: 40px;
 }
-
-.square-shape {
+.square-shape{
     background-color: white;
     border: 3px solid #333;
     border-radius: 3px;
@@ -229,23 +198,3 @@ main {
     height: 40px;
 }
 
-.oldisgold {
-    background-color: red;
-    margin: 14px 10px;
-    padding: 15px;
-    background-color: black;
-    border-radius: 13px;
-    display: flex;
-    justify-content: space-between;
-    text-decoration: none;
-    font-family: 'Roboto';
-}
-
-.oldisgold>a {
-    text-decoration: none;
-    color: white;
-}
-
-.oldisgold:hover {
-    background-color: #000000c4;
-}

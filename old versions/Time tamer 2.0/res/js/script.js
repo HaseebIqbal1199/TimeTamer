@@ -4,18 +4,14 @@ const stop = document.getElementById('stop');
 const attr_of_psuedu = document.getElementById('svg')
 attr_of_psuedu.title = `0 s`;
 
-const increment_audio = new Audio()
-increment_audio.src = "res/js/increment.mp3"
-
-const alarm_ring = new Audio()
-alarm_ring.src = "res/js/alarm_ring.mp3"
-
-
 start.addEventListener('click', () => {
     const hours = Number(document.getElementById('hours').value);
     const min = Number(document.getElementById('min').value);
     const sec = Number(document.getElementById('sec').value);
-    const calculated_time = (hours * 60 * 60) + (min * 60) + (sec)
+    const play = new Audio()
+    play.src = "res/js/play.mp3"
+    const calculated_time = (hours * 60 * 60) + (min * 60) + (sec);
+    play.play()
     var sec_content = 0
     var min_content = 0
     var init_val_progress = 722;
@@ -26,12 +22,6 @@ start.addEventListener('click', () => {
         init_val_progress -= calc_time_to_percent;
         console.log(init_val_progress);
         if (init_val_progress > 0) {
-            // Add this line
-            increment_audio.play(); // Start the audio playback
-            setTimeout(() => {
-                increment_audio.pause()
-                increment_audio.currentTime = 0
-            }, 800);
             progress_circle.setAttribute("stroke-dashoffset", init_val_progress);
             if (sec_content < 60) {
                 if (min_content != 0) {
@@ -46,20 +36,17 @@ start.addEventListener('click', () => {
             }
         }
         else {
-            alarm_ring.play()
             clearInterval(progress)
-            setTimeout(() => {
-                alarm_ring.pause()
-                alarm_ring.currentTime = 0
-            },1050)
             stop.style.display = 'none'
             console.log('ok ');
         }
         stop.addEventListener("click", () => {
-
+            const pause = new Audio()
+            pause.src = "res/js/pause.mp3"
+            pause.play()
             clearInterval(progress)
             stop.style.display = 'none'
-            console.log('dok');
+            console.log('ok ');
         })
 
     }, 1000);
@@ -85,33 +72,47 @@ array.forEach(element => {
         }
     })
 });
-const color_switcher_div = {
-    '1': document.querySelector('.teal'),
-    '2': document.querySelector('.yellow'),
-    '3': document.querySelector('.green'),
-    '4': document.querySelector('.red'),
-    '5': document.querySelector('.orange'),
-    '6': document.querySelector('.blue'),
-    '7': document.querySelector('.purple'),
+function teal() {
+    ui_color = 'teal';
+    start.style.background = ui_color
 }
-const color_switcher_db = {
-    '1': "teal",
-    '2': "yellow",
-    '3': "green",
-    '4': "red",
-    '5': "orange",
-    '6': "blue",
-    '7': "purple"
+function yellow() {
+    ui_color = 'yellow'
+    start.style.background = ui_color
 
 }
-Object.keys(color_switcher_div).forEach((key) => {
-    color_switcher_div[key].addEventListener('click', () => {
-        start.style.background = color_switcher_db[key]
-        console.log(color_switcher_db[key]);
-        document.querySelector('svg circle:nth-child(2)').setAttribute('stroke', color_switcher_db[key])
-    })
-})
+function green() {
+    ui_color = 'green'
+    start.style.background = ui_color
 
+}
+function red() {
+    ui_color = 'red'
+    start.style.background = ui_color
+
+}
+function orange() {
+    ui_color = 'orange'
+    start.style.background = ui_color
+
+}
+function blue() {
+    ui_color = 'blue'
+    start.style.background = ui_color
+
+}
+function purple() {
+    ui_color = 'purple'
+    start.style.background = ui_color
+
+}
+function shape_circle() {
+    progress_circle.style.borderRadius = '50%'
+}
+function shape_square() {
+    progress_circle.style.borderRadius = '20%'
+
+}
 var j = 0
 document.getElementById('name-header').addEventListener('click', () => {
 
@@ -120,7 +121,7 @@ document.getElementById('name-header').addEventListener('click', () => {
             document.getElementById('menu').classList.remove('menu-slide-down')
             const option = new Audio()
             option.src = "res/js/option.mp3"
-
+            option.play()
         }
         document.getElementById('menu').classList.toggle('menu-slide-up')
         j++
@@ -129,7 +130,7 @@ document.getElementById('name-header').addEventListener('click', () => {
             document.getElementById('menu').classList.remove('menu-slide-up')
             const option = new Audio()
             option.src = "res/js/option.mp3"
-
+            option.play()
         }
         document.getElementById('menu').classList.toggle('menu-slide-down')
         j = 0
